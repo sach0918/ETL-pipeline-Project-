@@ -9,9 +9,9 @@ logging.basicConfig(
 
 def api():
         url="YOUR-API-KEY"
-        responce=requests.get(url)
+        response=requests.get(url)
         print("Status code: ",responce.status_code)
-        data=responce.json()
+        data=respose.json()
         holidays=data['holidays']
         logging.info("API request Successfull")
         return holidays
@@ -36,7 +36,7 @@ def clean_data(holidays):
      return cleaned_holidays
 
 
-def insert_data(holidays):
+def insert_data(cleaned_holidays):
         query="""
         INSERT INTO HOLIDAYS 
         (name,holiday_date,public_holiday,country)
@@ -85,8 +85,8 @@ try:
     
     conn = mysql.connector.connect(
         host="localhost",
-        user="root",
-        password="Sachith@18",
+        user="USER",
+        password="PASSWORD",
         database="holiday_project"
     )
     cursor=conn.cursor()
