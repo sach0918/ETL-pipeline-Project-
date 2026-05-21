@@ -8,7 +8,7 @@ logging.basicConfig(
 )
 
 def api():
-        url="https://holidayapi.com/v1/holidays?key=09fc66c3-d729-4abf-922a-492a1190c13f&country=US&year=2025&pretty"
+        url="YOUR-API-KEY"
         responce=requests.get(url)
         print("Status code: ",responce.status_code)
         data=responce.json()
